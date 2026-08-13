@@ -9,3 +9,5 @@ The shop offers watches that combine style, quality, and practicality for everyd
 This project was created by Hanelyn Gontinas as part of a Web Development course.
 
 Created by Hanelyn Gontinas, 2026.
+
+Live site: https://hanelyn-gontinas.github.io/hanelyn-timepieces/
