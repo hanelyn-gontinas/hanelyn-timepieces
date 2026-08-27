@@ -60,6 +60,7 @@
 
         </section>
 
+
         <section>
 
             <h2>Product Specifications</h2>
@@ -115,7 +116,185 @@
 
         </section>
 
+
+        <!-- ORDER ENQUIRY FORM -->
+
+        <section>
+
+            <h2>Order Enquiry</h2>
+
+            <p>
+                Interested in ordering the Classic Analog Watch?
+                Please complete the form below to send us your order enquiry.
+            </p>
+
+            <form id="orderEnquiryForm">
+
+                <fieldset>
+
+                    <legend>Order Details</legend>
+
+                    <p>
+                        <label for="quantity">
+                            Quantity
+                        </label>
+                        <br>
+
+                        <input
+                            type="number"
+                            id="quantity"
+                            name="quantity"
+                            min="1"
+                            max="20"
+                            value="1"
+                            required
+                        >
+                    </p>
+
+
+                    <fieldset>
+
+                        <legend>
+                            Delivery Method
+                        </legend>
+
+                        <p>
+                            <input
+                                type="radio"
+                                id="standardDelivery"
+                                name="delivery"
+                                value="standard"
+                                required
+                            >
+
+                            <label for="standardDelivery">
+                                Standard Delivery
+                            </label>
+                        </p>
+
+                        <p>
+                            <input
+                                type="radio"
+                                id="expressDelivery"
+                                name="delivery"
+                                value="express"
+                            >
+
+                            <label for="expressDelivery">
+                                Express Delivery
+                            </label>
+                        </p>
+
+                        <p>
+                            <input
+                                type="radio"
+                                id="storePickup"
+                                name="delivery"
+                                value="pickup"
+                            >
+
+                            <label for="storePickup">
+                                Store Pickup
+                            </label>
+                        </p>
+
+                    </fieldset>
+
+
+                    <fieldset>
+
+                        <legend>
+                            Optional Extras
+                        </legend>
+
+                        <p>
+                            <input
+                                type="checkbox"
+                                id="giftWrapping"
+                                name="extras"
+                                value="gift-wrapping"
+                            >
+
+                            <label for="giftWrapping">
+                                Gift Wrapping
+                            </label>
+                        </p>
+
+                        <p>
+                            <input
+                                type="checkbox"
+                                id="expressHandling"
+                                name="extras"
+                                value="express-handling"
+                            >
+
+                            <label for="expressHandling">
+                                Express Handling
+                            </label>
+                        </p>
+
+                        <p>
+                            <input
+                                type="checkbox"
+                                id="watchBox"
+                                name="extras"
+                                value="watch-box"
+                            >
+
+                            <label for="watchBox">
+                                Premium Watch Box
+                            </label>
+                        </p>
+
+                    </fieldset>
+
+
+                    <p>
+                        <label for="contactEmail">
+                            Contact Email
+                        </label>
+                        <br>
+
+                        <input
+                            type="email"
+                            id="contactEmail"
+                            name="contactEmail"
+                            required
+                        >
+                    </p>
+
+
+                    <p>
+                        <button type="submit">
+                            Send Order Enquiry
+                        </button>
+                    </p>
+
+                </fieldset>
+
+            </form>
+
+
+            <section id="orderSuccessMessage" hidden>
+
+                <h2>Order Enquiry Sent!</h2>
+
+                <p>
+                    Thank you for your interest in the Classic Analog Watch.
+                    Your order enquiry has been received successfully.
+                </p>
+
+                <p>
+                    We will review your enquiry and contact you through
+                    the email address you provided.
+                </p>
+
+            </section>
+
+        </section>
+
     </main>
+
 
     <footer>
 
@@ -124,6 +303,28 @@
         </p>
 
     </footer>
+
+
+    <script>
+
+        const orderEnquiryForm =
+            document.getElementById("orderEnquiryForm");
+
+        const orderSuccessMessage =
+            document.getElementById("orderSuccessMessage");
+
+
+        orderEnquiryForm.addEventListener("submit", function(event) {
+
+            event.preventDefault();
+
+            orderEnquiryForm.hidden = true;
+
+            orderSuccessMessage.hidden = false;
+
+        });
+
+    </script>
 
 </body>
 
