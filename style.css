@@ -3,15 +3,14 @@
    ========================================================= */
 
 :root {
-    --brand-color: #9a7046;
+    --brand: #9a7046;
     --dark-ink: #302820;
-    --muted-grey: #70675f;
+    --muted-grey: #665b52;
     --light-background: #f5f0e8;
 
     --white: #ffffff;
     --light-card: #fcfaf7;
-    --border-color: #ddd1c3;
-    --soft-brown: #d8c3a8;
+    --border: #d8cabc;
 }
 
 
@@ -46,13 +45,7 @@ img {
 }
 
 a {
-    color: var(--brand-color);
-}
-
-h1,
-h2,
-h3 {
-    color: var(--dark-ink);
+    color: var(--brand);
 }
 
 
@@ -67,35 +60,29 @@ header {
 
     text-align: center;
 
-    padding: 30px 20px;
+    padding: 35px 20px;
 }
 
 header h1,
 header h2 {
-    margin: 0 0 8px;
-
-    color: var(--white);
+    margin: 0 0 10px;
 
     font-family: Georgia, "Times New Roman", serif;
-}
 
-header h1 {
-    font-size: 38px;
-}
-
-header h2 {
-    font-size: 30px;
+    font-size: 36px;
 }
 
 header p {
-    margin: 0 0 20px;
+    margin: 0 0 22px;
 
-    color: #e8ddd0;
+    color: var(--white);
+
+    font-size: 15px;
 }
 
 
 /* =========================================================
-   4. NAVIGATION
+   3. LAYOUT REGIONS - NAVIGATION
    ========================================================= */
 
 nav {
@@ -108,70 +95,59 @@ nav ul {
     padding: 0;
 
     margin: 0;
-
-    text-align: center;
 }
 
 nav li {
     display: inline-block;
 
-    margin: 0 8px;
+    margin: 0 12px;
 }
 
 nav a {
-    display: inline-block;
-
-    padding: 8px 14px;
-
     color: var(--white);
 
     text-decoration: none;
 
     font-weight: bold;
 
-    border-radius: 20px;
+    font-size: 15px;
 
-    transition:
-        background-color 0.3s ease,
-        color 0.3s ease;
+    padding: 8px 5px;
+
+    transition: color 0.3s ease;
 }
 
 nav a:hover {
-    background-color: var(--brand-color);
-
-    color: var(--white);
+    color: var(--brand);
 }
 
 
 /* =========================================================
-   5. MAIN CONTENT
+   3. LAYOUT REGIONS - MAIN
    ========================================================= */
 
 main {
-    width: 90%;
-
-    max-width: 1100px;
+    max-width: 1000px;
 
     margin: 0 auto;
 
-    padding: 70px 0;
+    padding: 70px 25px;
 }
 
 main section {
-    margin-bottom: 60px;
-}
-
-main section:last-child {
-    margin-bottom: 0;
+    margin-bottom: 55px;
 }
 
 main h1,
-main h2 {
+main h2,
+main h3 {
     font-family: Georgia, "Times New Roman", serif;
+
+    color: var(--dark-ink);
 }
 
 main h1 {
-    font-size: 44px;
+    font-size: 42px;
 
     margin-bottom: 25px;
 }
@@ -179,80 +155,77 @@ main h1 {
 main h2 {
     font-size: 32px;
 
-    color: #4b3828;
-
     margin-bottom: 20px;
 }
 
 main h3 {
-    font-family: Georgia, "Times New Roman", serif;
+    font-size: 27px;
 
-    font-size: 26px;
+    margin-top: 0;
 
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 }
 
 main p {
     color: var(--muted-grey);
 
-    margin-bottom: 18px;
+    font-size: 16px;
 }
 
 
 /* =========================================================
-   6. PRODUCT CARDS
+   4. COMPONENTS - PRODUCT CARDS
    ========================================================= */
 
-article {
+.product-card {
     background-color: var(--white);
 
-    padding: 30px;
+    border-radius: 10px;
 
-    margin-bottom: 30px;
+    padding: 25px;
 
-    border-radius: 12px;
+    border-left: 6px solid var(--brand);
 
-    border: 1px solid var(--border-color);
-
-    box-shadow:
-        0 10px 25px rgba(60, 45, 30, 0.08);
-
-    transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
-}
-
-article:hover {
-    transform: translateY(-5px);
+    margin-bottom: 25px;
 
     box-shadow:
-        0 15px 30px rgba(60, 45, 30, 0.14);
+        0 8px 25px rgba(48, 40, 32, 0.10);
 }
 
-article h3 {
-    color: #4b3828;
+.product-card h3 {
+    color: var(--dark-ink);
+
+    font-size: 28px;
+
+    margin-bottom: 12px;
 }
 
-article p:first-of-type {
-    color: var(--brand-color);
+.product-card p {
+    color: var(--muted-grey);
+
+    font-size: 15px;
+
+    margin-bottom: 15px;
+}
+
+.product-card p:first-of-type {
+    color: var(--brand);
 
     font-weight: bold;
+
+    font-size: 16px;
 }
 
-article img {
+.product-card img {
     width: 300px;
 
-    max-width: 100%;
+    border-radius: 8px;
 
     margin: 20px 0;
-
-    border-radius: 10px;
 }
 
-article a {
+.product-card a {
     display: inline-block;
-
-    padding: 10px 18px;
 
     background-color: var(--dark-ink);
 
@@ -262,6 +235,8 @@ article a {
 
     font-weight: bold;
 
+    padding: 10px 18px;
+
     border-radius: 25px;
 
     transition:
@@ -269,24 +244,203 @@ article a {
         transform 0.3s ease;
 }
 
-article a:hover {
-    background-color: var(--brand-color);
+.product-card a:hover {
+    background-color: var(--brand);
 
     transform: translateY(-2px);
 }
 
 
 /* =========================================================
-   7. IMAGES
+   4. COMPONENTS - CONTACT INFORMATION
    ========================================================= */
 
-main img {
-    border-radius: 10px;
+main ul {
+    color: var(--muted-grey);
+
+    padding-left: 25px;
+}
+
+main li {
+    margin-bottom: 10px;
+}
+
+main li a {
+    color: var(--brand);
+
+    font-weight: bold;
+
+    text-decoration: none;
+}
+
+main li a:hover {
+    text-decoration: underline;
 }
 
 
 /* =========================================================
-   8. TABLE
+   4. COMPONENTS - FORM
+   ========================================================= */
+
+form {
+    width: 100%;
+}
+
+fieldset {
+    background-color: var(--white);
+
+    border: 1px solid var(--border);
+
+    border-radius: 10px;
+
+    padding: 30px;
+
+    margin: 0;
+}
+
+legend {
+    padding: 0 12px;
+
+    color: var(--brand);
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 20px;
+
+    font-weight: bold;
+}
+
+form p {
+    margin-bottom: 22px;
+}
+
+label {
+    color: var(--dark-ink);
+
+    font-size: 15px;
+
+    font-weight: bold;
+}
+
+input,
+textarea,
+select {
+    width: 100%;
+
+    padding: 12px 14px;
+
+    margin-top: 7px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 7px;
+
+    background-color: var(--white);
+
+    color: var(--dark-ink);
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 15px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   4. COMPONENTS - FORM FOCUS STATE
+   ========================================================= */
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: 3px solid var(--brand);
+
+    outline-offset: 2px;
+
+    border-color: var(--brand);
+}
+
+
+/* =========================================================
+   4. COMPONENTS - TEXTAREA
+   ========================================================= */
+
+textarea {
+    min-height: 150px;
+
+    resize: vertical;
+}
+
+
+/* =========================================================
+   4. COMPONENTS - SUBMIT BUTTON
+   ========================================================= */
+
+button {
+    background-color: var(--dark-ink);
+
+    color: var(--white);
+
+    padding: 12px 25px;
+
+    border: none;
+
+    border-radius: 25px;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--brand);
+
+    transform: translateY(-2px);
+}
+
+button:focus {
+    outline: 3px solid var(--brand);
+
+    outline-offset: 3px;
+}
+
+
+/* =========================================================
+   4. COMPONENTS - SUCCESS MESSAGES
+   ========================================================= */
+
+#successMessage,
+#orderSuccessMessage {
+    background-color: var(--white);
+
+    border-left: 5px solid var(--brand);
+
+    border-radius: 8px;
+
+    padding: 25px;
+
+    margin-top: 25px;
+}
+
+#successMessage h2,
+#orderSuccessMessage h2 {
+    color: var(--brand);
+
+    margin-top: 0;
+}
+
+
+/* =========================================================
+   4. COMPONENTS - TABLE
    ========================================================= */
 
 table {
@@ -301,16 +455,16 @@ table {
     overflow: hidden;
 
     box-shadow:
-        0 10px 25px rgba(60, 45, 30, 0.08);
+        0 8px 25px rgba(48, 40, 32, 0.08);
 }
 
 th,
 td {
-    padding: 15px 18px;
+    padding: 14px 16px;
 
     text-align: left;
 
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border);
 }
 
 th {
@@ -331,205 +485,7 @@ tr:last-child td {
 
 
 /* =========================================================
-   9. FORMS
-   ========================================================= */
-
-form {
-    background-color: var(--white);
-
-    padding: 30px;
-
-    border-radius: 12px;
-
-    border: 1px solid var(--border-color);
-
-    box-shadow:
-        0 10px 25px rgba(60, 45, 30, 0.08);
-}
-
-fieldset {
-    border: 1px solid var(--border-color);
-
-    border-radius: 10px;
-
-    padding: 25px;
-
-    margin: 0 0 25px;
-
-    background-color: var(--light-card);
-}
-
-fieldset fieldset {
-    margin-top: 20px;
-
-    background-color: var(--white);
-}
-
-legend {
-    padding: 0 10px;
-
-    color: var(--brand-color);
-
-    font-family: Georgia, "Times New Roman", serif;
-
-    font-size: 18px;
-
-    font-weight: bold;
-}
-
-label {
-    color: #4b3828;
-
-    font-weight: bold;
-}
-
-input,
-select,
-textarea {
-    width: 100%;
-
-    padding: 12px 14px;
-
-    margin-top: 6px;
-
-    border: 1px solid #d8cabc;
-
-    border-radius: 7px;
-
-    background-color: var(--white);
-
-    color: var(--dark-ink);
-
-    font-family: Arial, Helvetica, sans-serif;
-
-    font-size: 15px;
-
-    outline: none;
-}
-
-input:focus,
-select:focus,
-textarea:focus {
-    border-color: var(--brand-color);
-
-    box-shadow:
-        0 0 0 3px rgba(154, 112, 70, 0.15);
-}
-
-textarea {
-    min-height: 150px;
-
-    resize: vertical;
-}
-
-
-/* =========================================================
-   10. RADIO BUTTONS AND CHECKBOXES
-   ========================================================= */
-
-input[type="radio"],
-input[type="checkbox"] {
-    width: auto;
-
-    margin-right: 8px;
-
-    margin-top: 0;
-
-    vertical-align: middle;
-}
-
-fieldset p {
-    margin-bottom: 15px;
-}
-
-fieldset p:last-child {
-    margin-bottom: 0;
-}
-
-
-/* =========================================================
-   11. BUTTONS
-   ========================================================= */
-
-button {
-    display: inline-block;
-
-    padding: 12px 25px;
-
-    border: none;
-
-    border-radius: 30px;
-
-    background-color: var(--dark-ink);
-
-    color: var(--white);
-
-    font-family: Arial, Helvetica, sans-serif;
-
-    font-size: 15px;
-
-    font-weight: bold;
-
-    cursor: pointer;
-
-    transition:
-        background-color 0.3s ease,
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
-}
-
-button:hover {
-    background-color: var(--brand-color);
-
-    transform: translateY(-2px);
-
-    box-shadow:
-        0 8px 18px rgba(60, 45, 30, 0.18);
-}
-
-
-/* =========================================================
-   12. SUCCESS MESSAGES
-   ========================================================= */
-
-#successMessage,
-#orderSuccessMessage {
-    background-color: var(--white);
-
-    padding: 30px;
-
-    border-radius: 12px;
-
-    border-left: 5px solid var(--brand-color);
-
-    box-shadow:
-        0 10px 25px rgba(60, 45, 30, 0.08);
-}
-
-#successMessage h2,
-#orderSuccessMessage h2 {
-    color: var(--brand-color);
-}
-
-
-/* =========================================================
-   13. PRODUCT DETAIL PAGE
-   ========================================================= */
-
-main > section > img {
-    margin: 20px 0 35px;
-
-    max-width: 500px;
-
-    border-radius: 12px;
-
-    box-shadow:
-        0 15px 30px rgba(60, 45, 30, 0.12);
-}
-
-
-/* =========================================================
-   14. FOOTER
+   5. FOOTER
    ========================================================= */
 
 footer {
@@ -540,47 +496,42 @@ footer {
     text-align: center;
 
     padding: 35px 20px;
-
-    margin-top: 40px;
 }
 
 footer p {
     margin: 0;
 
-    color: #d7cec3;
+    color: var(--white);
 
     font-size: 14px;
 }
 
 
 /* =========================================================
-   15. RESPONSIVE DESIGN
+   6. RESPONSIVE DESIGN
    ========================================================= */
 
-@media (max-width: 700px) {
+@media (max-width: 600px) {
 
-    header h1 {
-        font-size: 32px;
+    header {
+        padding: 30px 15px;
     }
 
+    header h1,
     header h2 {
-        font-size: 27px;
+        font-size: 30px;
     }
 
     nav li {
-        margin: 4px;
+        margin: 0 7px;
     }
 
     nav a {
-        padding: 7px 10px;
-
         font-size: 14px;
     }
 
     main {
-        width: 92%;
-
-        padding: 50px 0;
+        padding: 50px 18px;
     }
 
     main h1 {
@@ -591,8 +542,24 @@ footer p {
         font-size: 28px;
     }
 
-    article {
-        padding: 22px;
+    main h3 {
+        font-size: 24px;
+    }
+
+    .product-card {
+        padding: 20px;
+
+        border-left-width: 5px;
+    }
+
+    .product-card img {
+        width: 100%;
+
+        max-width: 300px;
+    }
+
+    fieldset {
+        padding: 22px 18px;
     }
 
     table {
@@ -601,84 +568,43 @@ footer p {
 
     th,
     td {
-        padding: 12px;
+        padding: 11px;
     }
 
-    form {
-        padding: 20px;
-    }
-
-    fieldset {
-        padding: 18px;
+    button {
+        width: 100%;
     }
 }
 
 
 /* =========================================================
-   16. SMALL PHONES
+   7. SMALL PHONES
    ========================================================= */
 
-@media (max-width: 450px) {
+@media (max-width: 420px) {
 
-    header {
-        padding: 25px 15px;
-    }
-
-    header h1 {
-        font-size: 28px;
-    }
-
+    header h1,
     header h2 {
-        font-size: 24px;
-    }
-
-    nav ul {
-        display: flex;
-
-        flex-wrap: wrap;
-
-        justify-content: center;
-
-        gap: 5px;
+        font-size: 26px;
     }
 
     nav li {
-        display: inline-block;
-
-        margin: 0;
+        margin: 0 4px;
     }
 
     nav a {
         font-size: 13px;
-
-        padding: 7px 9px;
     }
 
     main {
-        width: 94%;
-
-        padding: 40px 0;
+        padding: 40px 15px;
     }
 
-    main h1 {
-        font-size: 32px;
-    }
-
-    main h2 {
-        font-size: 25px;
-    }
-
-    article {
+    .product-card {
         padding: 18px;
     }
 
-    input,
-    select,
-    textarea {
-        font-size: 16px;
-    }
-
-    button {
-        width: 100%;
+    fieldset {
+        padding: 20px 15px;
     }
 }
