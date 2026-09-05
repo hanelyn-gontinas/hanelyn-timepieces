@@ -1,0 +1,684 @@
+/* =========================================================
+   1. VARIABLES
+   ========================================================= */
+
+:root {
+    --brand-color: #9a7046;
+    --dark-ink: #302820;
+    --muted-grey: #70675f;
+    --light-background: #f5f0e8;
+
+    --white: #ffffff;
+    --light-card: #fcfaf7;
+    --border-color: #ddd1c3;
+    --soft-brown: #d8c3a8;
+}
+
+
+/* =========================================================
+   2. BASE STYLES
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    line-height: 1.6;
+
+    color: var(--dark-ink);
+
+    background-color: var(--light-background);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    color: var(--brand-color);
+}
+
+h1,
+h2,
+h3 {
+    color: var(--dark-ink);
+}
+
+
+/* =========================================================
+   3. LAYOUT REGIONS - HEADER
+   ========================================================= */
+
+header {
+    background-color: var(--dark-ink);
+
+    color: var(--white);
+
+    text-align: center;
+
+    padding: 30px 20px;
+}
+
+header h1,
+header h2 {
+    margin: 0 0 8px;
+
+    color: var(--white);
+
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+header h1 {
+    font-size: 38px;
+}
+
+header h2 {
+    font-size: 30px;
+}
+
+header p {
+    margin: 0 0 20px;
+
+    color: #e8ddd0;
+}
+
+
+/* =========================================================
+   4. NAVIGATION
+   ========================================================= */
+
+nav {
+    margin-top: 20px;
+}
+
+nav ul {
+    list-style: none;
+
+    padding: 0;
+
+    margin: 0;
+
+    text-align: center;
+}
+
+nav li {
+    display: inline-block;
+
+    margin: 0 8px;
+}
+
+nav a {
+    display: inline-block;
+
+    padding: 8px 14px;
+
+    color: var(--white);
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    border-radius: 20px;
+
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: var(--brand-color);
+
+    color: var(--white);
+}
+
+
+/* =========================================================
+   5. MAIN CONTENT
+   ========================================================= */
+
+main {
+    width: 90%;
+
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    padding: 70px 0;
+}
+
+main section {
+    margin-bottom: 60px;
+}
+
+main section:last-child {
+    margin-bottom: 0;
+}
+
+main h1,
+main h2 {
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+main h1 {
+    font-size: 44px;
+
+    margin-bottom: 25px;
+}
+
+main h2 {
+    font-size: 32px;
+
+    color: #4b3828;
+
+    margin-bottom: 20px;
+}
+
+main h3 {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 26px;
+
+    margin-bottom: 10px;
+}
+
+main p {
+    color: var(--muted-grey);
+
+    margin-bottom: 18px;
+}
+
+
+/* =========================================================
+   6. PRODUCT CARDS
+   ========================================================= */
+
+article {
+    background-color: var(--white);
+
+    padding: 30px;
+
+    margin-bottom: 30px;
+
+    border-radius: 12px;
+
+    border: 1px solid var(--border-color);
+
+    box-shadow:
+        0 10px 25px rgba(60, 45, 30, 0.08);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+article:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 15px 30px rgba(60, 45, 30, 0.14);
+}
+
+article h3 {
+    color: #4b3828;
+}
+
+article p:first-of-type {
+    color: var(--brand-color);
+
+    font-weight: bold;
+}
+
+article img {
+    width: 300px;
+
+    max-width: 100%;
+
+    margin: 20px 0;
+
+    border-radius: 10px;
+}
+
+article a {
+    display: inline-block;
+
+    padding: 10px 18px;
+
+    background-color: var(--dark-ink);
+
+    color: var(--white);
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    border-radius: 25px;
+
+    transition:
+        background-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+article a:hover {
+    background-color: var(--brand-color);
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   7. IMAGES
+   ========================================================= */
+
+main img {
+    border-radius: 10px;
+}
+
+
+/* =========================================================
+   8. TABLE
+   ========================================================= */
+
+table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    background-color: var(--white);
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 10px 25px rgba(60, 45, 30, 0.08);
+}
+
+th,
+td {
+    padding: 15px 18px;
+
+    text-align: left;
+
+    border-bottom: 1px solid var(--border-color);
+}
+
+th {
+    background-color: var(--dark-ink);
+
+    color: var(--white);
+
+    font-weight: bold;
+}
+
+td {
+    color: var(--muted-grey);
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* =========================================================
+   9. FORMS
+   ========================================================= */
+
+form {
+    background-color: var(--white);
+
+    padding: 30px;
+
+    border-radius: 12px;
+
+    border: 1px solid var(--border-color);
+
+    box-shadow:
+        0 10px 25px rgba(60, 45, 30, 0.08);
+}
+
+fieldset {
+    border: 1px solid var(--border-color);
+
+    border-radius: 10px;
+
+    padding: 25px;
+
+    margin: 0 0 25px;
+
+    background-color: var(--light-card);
+}
+
+fieldset fieldset {
+    margin-top: 20px;
+
+    background-color: var(--white);
+}
+
+legend {
+    padding: 0 10px;
+
+    color: var(--brand-color);
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 18px;
+
+    font-weight: bold;
+}
+
+label {
+    color: #4b3828;
+
+    font-weight: bold;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+
+    padding: 12px 14px;
+
+    margin-top: 6px;
+
+    border: 1px solid #d8cabc;
+
+    border-radius: 7px;
+
+    background-color: var(--white);
+
+    color: var(--dark-ink);
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 15px;
+
+    outline: none;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--brand-color);
+
+    box-shadow:
+        0 0 0 3px rgba(154, 112, 70, 0.15);
+}
+
+textarea {
+    min-height: 150px;
+
+    resize: vertical;
+}
+
+
+/* =========================================================
+   10. RADIO BUTTONS AND CHECKBOXES
+   ========================================================= */
+
+input[type="radio"],
+input[type="checkbox"] {
+    width: auto;
+
+    margin-right: 8px;
+
+    margin-top: 0;
+
+    vertical-align: middle;
+}
+
+fieldset p {
+    margin-bottom: 15px;
+}
+
+fieldset p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =========================================================
+   11. BUTTONS
+   ========================================================= */
+
+button {
+    display: inline-block;
+
+    padding: 12px 25px;
+
+    border: none;
+
+    border-radius: 30px;
+
+    background-color: var(--dark-ink);
+
+    color: var(--white);
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--brand-color);
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 18px rgba(60, 45, 30, 0.18);
+}
+
+
+/* =========================================================
+   12. SUCCESS MESSAGES
+   ========================================================= */
+
+#successMessage,
+#orderSuccessMessage {
+    background-color: var(--white);
+
+    padding: 30px;
+
+    border-radius: 12px;
+
+    border-left: 5px solid var(--brand-color);
+
+    box-shadow:
+        0 10px 25px rgba(60, 45, 30, 0.08);
+}
+
+#successMessage h2,
+#orderSuccessMessage h2 {
+    color: var(--brand-color);
+}
+
+
+/* =========================================================
+   13. PRODUCT DETAIL PAGE
+   ========================================================= */
+
+main > section > img {
+    margin: 20px 0 35px;
+
+    max-width: 500px;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 15px 30px rgba(60, 45, 30, 0.12);
+}
+
+
+/* =========================================================
+   14. FOOTER
+   ========================================================= */
+
+footer {
+    background-color: var(--dark-ink);
+
+    color: var(--white);
+
+    text-align: center;
+
+    padding: 35px 20px;
+
+    margin-top: 40px;
+}
+
+footer p {
+    margin: 0;
+
+    color: #d7cec3;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   15. RESPONSIVE DESIGN
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    header h1 {
+        font-size: 32px;
+    }
+
+    header h2 {
+        font-size: 27px;
+    }
+
+    nav li {
+        margin: 4px;
+    }
+
+    nav a {
+        padding: 7px 10px;
+
+        font-size: 14px;
+    }
+
+    main {
+        width: 92%;
+
+        padding: 50px 0;
+    }
+
+    main h1 {
+        font-size: 36px;
+    }
+
+    main h2 {
+        font-size: 28px;
+    }
+
+    article {
+        padding: 22px;
+    }
+
+    table {
+        font-size: 14px;
+    }
+
+    th,
+    td {
+        padding: 12px;
+    }
+
+    form {
+        padding: 20px;
+    }
+
+    fieldset {
+        padding: 18px;
+    }
+}
+
+
+/* =========================================================
+   16. SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 450px) {
+
+    header {
+        padding: 25px 15px;
+    }
+
+    header h1 {
+        font-size: 28px;
+    }
+
+    header h2 {
+        font-size: 24px;
+    }
+
+    nav ul {
+        display: flex;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+        gap: 5px;
+    }
+
+    nav li {
+        display: inline-block;
+
+        margin: 0;
+    }
+
+    nav a {
+        font-size: 13px;
+
+        padding: 7px 9px;
+    }
+
+    main {
+        width: 94%;
+
+        padding: 40px 0;
+    }
+
+    main h1 {
+        font-size: 32px;
+    }
+
+    main h2 {
+        font-size: 25px;
+    }
+
+    article {
+        padding: 18px;
+    }
+
+    input,
+    select,
+    textarea {
+        font-size: 16px;
+    }
+
+    button {
+        width: 100%;
+    }
+}
