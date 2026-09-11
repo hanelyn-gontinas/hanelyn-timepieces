@@ -28,13 +28,9 @@ html {
 
 body {
     margin: 0;
-
     font-family: Arial, Helvetica, sans-serif;
-
     line-height: 1.6;
-
     color: var(--dark-ink);
-
     background-color: var(--light-background);
 }
 
@@ -53,33 +49,18 @@ a {
    3. LAYOUT REGIONS - HEADER
    ========================================================= */
 
-/* Flexbox header required for Module 6.1 */
+/* Module 6.1: Header uses Flexbox */
 
 header {
     display: flex;
-
     justify-content: space-between;
-
     align-items: center;
 
     background-color: var(--dark-ink);
-
     color: var(--white);
 
     padding: 22px 30px;
-
     min-height: 74px;
-}
-
-/* Keeps the shop name and optional tagline together
-   as one side of the flex header */
-
-header > div {
-    display: flex;
-
-    flex-direction: column;
-
-    justify-content: center;
 }
 
 header h1,
@@ -87,42 +68,27 @@ header h2 {
     margin: 0;
 
     font-family: Georgia, "Times New Roman", serif;
-
     font-size: 30px;
-
     color: var(--white);
-}
-
-header p {
-    margin: 4px 0 0;
-
-    color: var(--white);
-
-    font-size: 15px;
 }
 
 
 /* =========================================================
-   3. LAYOUT REGIONS - NAVIGATION
+   3.1 NAVIGATION
    ========================================================= */
 
-/* The navigation itself stays on the far right */
+/* Module 6.1: Navigation list uses Flexbox */
 
 header nav {
     margin: 0;
 }
 
-/* Flexbox replaces inline-block */
-
 header nav ul {
     display: flex;
-
     gap: 20px;
 
     list-style: none;
-
     padding: 0;
-
     margin: 0;
 
     align-items: center;
@@ -134,11 +100,9 @@ header nav li {
 
 header nav a {
     color: var(--white);
-
     text-decoration: none;
 
     font-weight: bold;
-
     font-size: 15px;
 
     padding: 8px 0;
@@ -152,14 +116,12 @@ header nav a:hover {
 
 
 /* =========================================================
-   3. LAYOUT REGIONS - MAIN
+   3.2 MAIN LAYOUT
    ========================================================= */
 
 main {
     max-width: 1000px;
-
     margin: 0 auto;
-
     padding: 70px 25px;
 }
 
@@ -171,71 +133,89 @@ main h1,
 main h2,
 main h3 {
     font-family: Georgia, "Times New Roman", serif;
-
     color: var(--dark-ink);
 }
 
 main h1 {
     font-size: 42px;
-
     margin-bottom: 25px;
 }
 
 main h2 {
     font-size: 32px;
-
     margin-bottom: 20px;
 }
 
 main h3 {
     font-size: 27px;
-
     margin-top: 0;
-
     margin-bottom: 12px;
 }
 
 main p {
     color: var(--muted-grey);
-
     font-size: 16px;
 }
 
 
 /* =========================================================
-   3. LAYOUT REGIONS - CENTRED ELEMENT
+   3.3 CENTRED ELEMENT
    ========================================================= */
 
-/* The main product heading is centred horizontally.
-   A minimum height gives the element vertical space. */
+/* Module 6.1: Centred horizontally and vertically */
 
-main > section:first-child > h2 {
+.centered-banner {
+    min-height: 180px;
+
     display: flex;
+    flex-direction: column;
 
     justify-content: center;
-
     align-items: center;
-
-    min-height: 100px;
 
     text-align: center;
 }
 
+.centered-banner h2 {
+    margin: 0 0 15px;
+}
+
+.centered-banner p {
+    margin: 0;
+}
+
 
 /* =========================================================
-   4. COMPONENTS - PRODUCT CARDS
+   4. COMPONENTS - PRODUCT GRID
    ========================================================= */
 
+/* Module 6.2: Product cards are placed side by side
+   and wrap automatically on smaller screens */
+
+.product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+
+    align-items: stretch;
+}
+
+
+/* =========================================================
+   4.1 PRODUCT CARDS
+   ========================================================= */
+
+/* Module 6.2: Cards grow, shrink, and aim for 240px */
+
 .product-card {
+    flex: 1 1 240px;
+
     background-color: var(--white);
 
     border-radius: 10px;
-
-    padding: 25px;
-
     border-left: 6px solid var(--brand);
 
-    margin-bottom: 25px;
+    padding: 25px;
 
     box-shadow:
         0 8px 25px rgba(48, 40, 32, 0.10);
@@ -246,6 +226,7 @@ main > section:first-child > h2 {
 
     font-size: 28px;
 
+    margin-top: 0;
     margin-bottom: 12px;
 }
 
@@ -266,7 +247,8 @@ main > section:first-child > h2 {
 }
 
 .product-card img {
-    width: 300px;
+    width: 100%;
+    max-width: 300px;
 
     border-radius: 8px;
 
@@ -277,7 +259,6 @@ main > section:first-child > h2 {
     display: inline-block;
 
     background-color: var(--dark-ink);
-
     color: var(--white);
 
     text-decoration: none;
@@ -301,7 +282,7 @@ main > section:first-child > h2 {
 
 
 /* =========================================================
-   4. COMPONENTS - CONTACT INFORMATION
+   4.2 CONTACT INFORMATION
    ========================================================= */
 
 main ul {
@@ -328,7 +309,7 @@ main li a:hover {
 
 
 /* =========================================================
-   4. COMPONENTS - FORM
+   4.3 FORM
    ========================================================= */
 
 form {
@@ -373,10 +354,8 @@ label {
 
 
 /* =========================================================
-   4. COMPONENTS - TEXT INPUTS
+   4.4 TEXT INPUTS
    ========================================================= */
-
-/* Width 100% is only for normal form fields */
 
 input[type="text"],
 input[type="email"],
@@ -406,11 +385,10 @@ select {
 
 
 /* =========================================================
-   4. COMPONENTS - RADIO BUTTONS AND CHECKBOXES
+   4.5 RADIO BUTTONS AND CHECKBOXES
    ========================================================= */
 
-/* Important fix:
-   Radio buttons and checkboxes must NOT be width: 100%. */
+/* Radio buttons and checkboxes keep their normal size */
 
 input[type="radio"],
 input[type="checkbox"] {
@@ -425,7 +403,8 @@ input[type="checkbox"] {
     accent-color: var(--brand);
 }
 
-/* Lines up the circles/boxes with their labels */
+
+/* Keeps radio buttons and checkboxes aligned with labels */
 
 fieldset fieldset p {
     display: flex;
@@ -449,7 +428,7 @@ fieldset fieldset label {
 
 
 /* =========================================================
-   4. COMPONENTS - FORM FOCUS STATE
+   4.6 FORM FOCUS STATE
    ========================================================= */
 
 input[type="text"]:focus,
@@ -473,7 +452,7 @@ input[type="checkbox"]:focus {
 
 
 /* =========================================================
-   4. COMPONENTS - TEXTAREA
+   4.7 TEXTAREA
    ========================================================= */
 
 textarea {
@@ -484,7 +463,7 @@ textarea {
 
 
 /* =========================================================
-   4. COMPONENTS - SUBMIT BUTTON
+   4.8 SUBMIT BUTTON
    ========================================================= */
 
 button {
@@ -525,7 +504,7 @@ button:focus {
 
 
 /* =========================================================
-   4. COMPONENTS - SUCCESS MESSAGES
+   4.9 SUCCESS MESSAGES
    ========================================================= */
 
 #successMessage,
@@ -550,7 +529,7 @@ button:focus {
 
 
 /* =========================================================
-   4. COMPONENTS - TABLE
+   4.10 TABLE
    ========================================================= */
 
 table {
