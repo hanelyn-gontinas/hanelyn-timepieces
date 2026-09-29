@@ -42,6 +42,7 @@ body {
     /* Mobile layout */
     grid-template-columns: 1fr;
 
+    /* Products/main content comes before the sidebar on mobile */
     grid-template-areas:
         "masthead"
         "main"
@@ -89,16 +90,20 @@ footer {
    3.1 HEADER
    ========================================================= */
 
+/* Mobile header */
+
 header {
     display: flex;
 
     flex-direction: column;
+
     justify-content: center;
     align-items: center;
 
     gap: 15px;
 
     background-color: var(--dark-ink);
+
     color: var(--white);
 
     padding: 22px 18px;
@@ -154,6 +159,7 @@ header nav a {
     text-decoration: none;
 
     font-weight: bold;
+
     font-size: 14px;
 
     padding: 8px 0;
@@ -170,12 +176,16 @@ header nav a:hover {
    3.3 SIDEBAR
    ========================================================= */
 
-/* On mobile, sidebar comes AFTER the main content */
+/*
+   Mobile:
+   The sidebar appears AFTER the main content.
+*/
 
 aside {
     background-color: var(--white);
 
     border: 1px solid var(--border);
+
     border-left: 5px solid var(--brand);
 
     border-radius: 10px;
@@ -195,6 +205,7 @@ aside h2 {
     font-size: 22px;
 
     margin-top: 0;
+
     margin-bottom: 12px;
 }
 
@@ -204,6 +215,7 @@ aside p {
     font-size: 14px;
 
     margin-top: 0;
+
     margin-bottom: 25px;
 }
 
@@ -213,6 +225,7 @@ aside ul {
     padding-left: 20px;
 
     margin-top: 0;
+
     margin-bottom: 25px;
 }
 
@@ -263,6 +276,7 @@ main h3 {
     font-size: 24px;
 
     margin-top: 0;
+
     margin-bottom: 12px;
 }
 
@@ -285,6 +299,7 @@ main p {
     flex-direction: column;
 
     justify-content: center;
+
     align-items: center;
 
     text-align: center;
@@ -303,7 +318,12 @@ main p {
    4. COMPONENTS - PRODUCT GRID
    ========================================================= */
 
-/* Mobile-first product grid */
+/*
+   Mobile-first product grid.
+
+   Flexbox allows the cards to wrap when the screen
+   becomes wider or narrower.
+*/
 
 .product-grid {
     display: flex;
@@ -345,6 +365,7 @@ main p {
     font-size: 26px;
 
     margin-top: 0;
+
     margin-bottom: 12px;
 }
 
@@ -721,7 +742,10 @@ footer p {
    6. TABLET AND DESKTOP
    ========================================================= */
 
-/* Enhance the mobile layout at 700px and wider */
+/*
+   At 700px and wider, enhance the mobile layout
+   into the desktop two-column layout.
+*/
 
 @media (min-width: 700px) {
 
@@ -759,6 +783,7 @@ footer p {
 
     aside {
         margin-left: 16px;
+
         margin-right: 0;
 
         padding: 24px 20px;
@@ -823,6 +848,7 @@ footer p {
 
     main {
         padding-left: 30px;
+
         padding-right: 30px;
     }
 
