@@ -32,6 +32,21 @@ body {
     line-height: 1.6;
     color: var(--dark-ink);
     background-color: var(--light-background);
+
+    /* Module 7.1: Page skeleton uses CSS Grid */
+
+    display: grid;
+
+    grid-template-columns: 220px 1fr;
+
+    grid-template-areas:
+        "masthead masthead"
+        "side     main"
+        "foot     foot";
+
+    gap: 16px;
+
+    min-height: 100vh;
 }
 
 img {
@@ -46,7 +61,30 @@ a {
 
 
 /* =========================================================
-   3. LAYOUT REGIONS - HEADER
+   3. PAGE GRID AREAS
+   ========================================================= */
+
+/* Module 7.1: Named grid areas */
+
+header {
+    grid-area: masthead;
+}
+
+aside {
+    grid-area: side;
+}
+
+main {
+    grid-area: main;
+}
+
+footer {
+    grid-area: foot;
+}
+
+
+/* =========================================================
+   3.1 HEADER
    ========================================================= */
 
 /* Module 6.1: Header uses Flexbox */
@@ -74,7 +112,7 @@ header h2 {
 
 
 /* =========================================================
-   3.1 NAVIGATION
+   3.2 NAVIGATION
    ========================================================= */
 
 /* Module 6.1: Navigation list uses Flexbox */
@@ -116,13 +154,72 @@ header nav a:hover {
 
 
 /* =========================================================
-   3.2 MAIN LAYOUT
+   3.3 SIDEBAR
+   ========================================================= */
+
+/* Module 7.1: Sidebar is part of the page grid */
+
+aside {
+    background-color: var(--white);
+
+    border: 1px solid var(--border);
+    border-left: 5px solid var(--brand);
+
+    border-radius: 10px;
+
+    padding: 24px 20px;
+
+    align-self: start;
+
+    margin-left: 16px;
+}
+
+aside h2 {
+    font-family: Georgia, "Times New Roman", serif;
+
+    color: var(--dark-ink);
+
+    font-size: 22px;
+
+    margin-top: 0;
+    margin-bottom: 12px;
+}
+
+aside p {
+    color: var(--muted-grey);
+
+    font-size: 14px;
+
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+aside ul {
+    color: var(--muted-grey);
+
+    padding-left: 20px;
+
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+aside li {
+    margin-bottom: 8px;
+}
+
+
+/* =========================================================
+   3.4 MAIN LAYOUT
    ========================================================= */
 
 main {
     max-width: 1000px;
+
+    width: 100%;
+
     margin: 0 auto;
-    padding: 70px 25px;
+
+    padding: 50px 25px;
 }
 
 main section {
@@ -159,7 +256,7 @@ main p {
 
 
 /* =========================================================
-   3.3 CENTRED ELEMENT
+   3.5 CENTRED ELEMENT
    ========================================================= */
 
 /* Module 6.1: Centred horizontally and vertically */
@@ -189,8 +286,7 @@ main p {
    4. COMPONENTS - PRODUCT GRID
    ========================================================= */
 
-/* Module 6.2: Product cards are placed side by side
-   and wrap automatically on smaller screens */
+/* Module 6.2: Product cards remain Flexbox */
 
 .product-grid {
     display: flex;
@@ -388,8 +484,6 @@ select {
    4.5 RADIO BUTTONS AND CHECKBOXES
    ========================================================= */
 
-/* Radio buttons and checkboxes keep their normal size */
-
 input[type="radio"],
 input[type="checkbox"] {
     width: auto;
@@ -402,9 +496,6 @@ input[type="checkbox"] {
 
     accent-color: var(--brand);
 }
-
-
-/* Keeps radio buttons and checkboxes aligned with labels */
 
 fieldset fieldset p {
     display: flex;
@@ -600,6 +691,31 @@ footer p {
    6. RESPONSIVE DESIGN
    ========================================================= */
 
+@media (max-width: 800px) {
+
+    /* Module 7.1: Stack named grid areas on smaller screens */
+
+    body {
+        grid-template-columns: 1fr;
+
+        grid-template-areas:
+            "masthead"
+            "side"
+            "main"
+            "foot";
+    }
+
+    aside {
+        margin: 0 18px;
+    }
+
+    main {
+        max-width: 100%;
+        padding: 50px 18px;
+    }
+}
+
+
 @media (max-width: 600px) {
 
     header {
@@ -630,7 +746,7 @@ footer p {
     }
 
     main {
-        padding: 50px 18px;
+        padding: 40px 18px;
     }
 
     main h1 {
@@ -695,8 +811,12 @@ footer p {
         font-size: 13px;
     }
 
+    aside {
+        padding: 20px 16px;
+    }
+
     main {
-        padding: 40px 15px;
+        padding: 35px 15px;
     }
 
     .product-card {
