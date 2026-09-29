@@ -18,6 +18,8 @@
    2. BASE STYLES
    ========================================================= */
 
+/* Mobile-first: base layout is designed for small screens */
+
 * {
     box-sizing: border-box;
 }
@@ -28,21 +30,23 @@ html {
 
 body {
     margin: 0;
+
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.6;
+
     color: var(--dark-ink);
     background-color: var(--light-background);
 
-    /* Module 7.1: Page skeleton uses CSS Grid */
-
     display: grid;
 
-    grid-template-columns: 220px 1fr;
+    /* Mobile layout */
+    grid-template-columns: 1fr;
 
     grid-template-areas:
-        "masthead masthead"
-        "side     main"
-        "foot     foot";
+        "masthead"
+        "main"
+        "side"
+        "foot";
 
     gap: 16px;
 
@@ -63,8 +67,6 @@ a {
 /* =========================================================
    3. PAGE GRID AREAS
    ========================================================= */
-
-/* Module 7.1: Named grid areas */
 
 header {
     grid-area: masthead;
@@ -87,18 +89,23 @@ footer {
    3.1 HEADER
    ========================================================= */
 
-/* Module 6.1: Header uses Flexbox */
-
 header {
     display: flex;
-    justify-content: space-between;
+
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
+
+    gap: 15px;
 
     background-color: var(--dark-ink);
     color: var(--white);
 
-    padding: 22px 30px;
+    padding: 22px 18px;
+
     min-height: 74px;
+
+    text-align: center;
 }
 
 header h1,
@@ -106,7 +113,9 @@ header h2 {
     margin: 0;
 
     font-family: Georgia, "Times New Roman", serif;
-    font-size: 30px;
+
+    font-size: 28px;
+
     color: var(--white);
 }
 
@@ -115,21 +124,24 @@ header h2 {
    3.2 NAVIGATION
    ========================================================= */
 
-/* Module 6.1: Navigation list uses Flexbox */
-
 header nav {
     margin: 0;
 }
 
 header nav ul {
     display: flex;
-    gap: 20px;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 15px;
 
     list-style: none;
+
     padding: 0;
     margin: 0;
-
-    align-items: center;
 }
 
 header nav li {
@@ -138,10 +150,11 @@ header nav li {
 
 header nav a {
     color: var(--white);
+
     text-decoration: none;
 
     font-weight: bold;
-    font-size: 15px;
+    font-size: 14px;
 
     padding: 8px 0;
 
@@ -157,7 +170,7 @@ header nav a:hover {
    3.3 SIDEBAR
    ========================================================= */
 
-/* Module 7.1: Sidebar is part of the page grid */
+/* On mobile, sidebar comes AFTER the main content */
 
 aside {
     background-color: var(--white);
@@ -167,11 +180,11 @@ aside {
 
     border-radius: 10px;
 
-    padding: 24px 20px;
+    padding: 22px 18px;
 
     align-self: start;
 
-    margin-left: 16px;
+    margin: 0 18px;
 }
 
 aside h2 {
@@ -213,58 +226,62 @@ aside li {
    ========================================================= */
 
 main {
-    max-width: 1000px;
-
     width: 100%;
+
+    max-width: 1000px;
 
     margin: 0 auto;
 
-    padding: 50px 25px;
+    padding: 35px 18px;
 }
 
 main section {
-    margin-bottom: 55px;
+    margin-bottom: 50px;
 }
 
 main h1,
 main h2,
 main h3 {
     font-family: Georgia, "Times New Roman", serif;
+
     color: var(--dark-ink);
 }
 
 main h1 {
-    font-size: 42px;
+    font-size: 36px;
+
     margin-bottom: 25px;
 }
 
 main h2 {
-    font-size: 32px;
+    font-size: 28px;
+
     margin-bottom: 20px;
 }
 
 main h3 {
-    font-size: 27px;
+    font-size: 24px;
+
     margin-top: 0;
     margin-bottom: 12px;
 }
 
 main p {
     color: var(--muted-grey);
+
     font-size: 16px;
 }
 
 
 /* =========================================================
-   3.5 CENTRED ELEMENT
+   3.5 CENTERED ELEMENT
    ========================================================= */
 
-/* Module 6.1: Centred horizontally and vertically */
-
 .centered-banner {
-    min-height: 180px;
+    min-height: 160px;
 
     display: flex;
+
     flex-direction: column;
 
     justify-content: center;
@@ -286,12 +303,16 @@ main p {
    4. COMPONENTS - PRODUCT GRID
    ========================================================= */
 
-/* Module 6.2: Product cards remain Flexbox */
+/* Mobile-first product grid */
 
 .product-grid {
     display: flex;
+
+    flex-direction: row;
+
     flex-wrap: wrap;
-    gap: 24px;
+
+    gap: 20px;
 
     align-items: stretch;
 }
@@ -301,17 +322,18 @@ main p {
    4.1 PRODUCT CARDS
    ========================================================= */
 
-/* Module 6.2: Cards grow, shrink, and aim for 240px */
-
 .product-card {
     flex: 1 1 240px;
+
+    min-width: 0;
 
     background-color: var(--white);
 
     border-radius: 10px;
-    border-left: 6px solid var(--brand);
 
-    padding: 25px;
+    border-left: 5px solid var(--brand);
+
+    padding: 20px;
 
     box-shadow:
         0 8px 25px rgba(48, 40, 32, 0.10);
@@ -320,7 +342,7 @@ main p {
 .product-card h3 {
     color: var(--dark-ink);
 
-    font-size: 28px;
+    font-size: 26px;
 
     margin-top: 0;
     margin-bottom: 12px;
@@ -344,6 +366,7 @@ main p {
 
 .product-card img {
     width: 100%;
+
     max-width: 300px;
 
     border-radius: 8px;
@@ -355,6 +378,7 @@ main p {
     display: inline-block;
 
     background-color: var(--dark-ink);
+
     color: var(--white);
 
     text-decoration: none;
@@ -413,19 +437,21 @@ form {
 }
 
 fieldset {
+    width: 100%;
+
     background-color: var(--white);
 
     border: 1px solid var(--border);
 
     border-radius: 10px;
 
-    padding: 30px;
+    padding: 22px 18px;
 
     margin: 0 0 15px;
 }
 
 legend {
-    padding: 0 12px;
+    padding: 0 10px;
 
     color: var(--brand);
 
@@ -459,6 +485,8 @@ input[type="number"],
 textarea,
 select {
     width: 100%;
+
+    max-width: 100%;
 
     padding: 12px 14px;
 
@@ -606,7 +634,7 @@ button:focus {
 
     border-radius: 8px;
 
-    padding: 25px;
+    padding: 22px;
 
     margin-top: 25px;
 }
@@ -640,11 +668,13 @@ table {
 
 th,
 td {
-    padding: 14px 16px;
+    padding: 12px;
 
     text-align: left;
 
     border-bottom: 1px solid var(--border);
+
+    overflow-wrap: anywhere;
 }
 
 th {
@@ -675,7 +705,7 @@ footer {
 
     text-align: center;
 
-    padding: 35px 20px;
+    padding: 30px 18px;
 }
 
 footer p {
@@ -688,46 +718,30 @@ footer p {
 
 
 /* =========================================================
-   6. RESPONSIVE DESIGN
+   6. TABLET AND DESKTOP
    ========================================================= */
 
-@media (max-width: 800px) {
+/* Enhance the mobile layout at 700px and wider */
 
-    /* Module 7.1: Stack named grid areas on smaller screens */
+@media (min-width: 700px) {
 
     body {
-        grid-template-columns: 1fr;
+        grid-template-columns: 220px 1fr;
 
         grid-template-areas:
-            "masthead"
-            "side"
-            "main"
-            "foot";
+            "masthead masthead"
+            "side     main"
+            "foot     foot";
     }
-
-    aside {
-        margin: 0 18px;
-    }
-
-    main {
-        max-width: 100%;
-        padding: 50px 18px;
-    }
-}
-
-
-@media (max-width: 600px) {
 
     header {
-        flex-direction: column;
+        flex-direction: row;
 
-        justify-content: center;
+        justify-content: space-between;
 
-        gap: 15px;
+        text-align: left;
 
-        text-align: center;
-
-        padding: 25px 15px;
+        padding: 22px 30px;
     }
 
     header h1,
@@ -736,94 +750,83 @@ footer p {
     }
 
     header nav ul {
-        gap: 15px;
-
-        justify-content: center;
+        gap: 20px;
     }
 
     header nav a {
-        font-size: 14px;
+        font-size: 15px;
+    }
+
+    aside {
+        margin-left: 16px;
+        margin-right: 0;
+
+        padding: 24px 20px;
     }
 
     main {
-        padding: 40px 18px;
+        padding: 50px 25px;
     }
 
     main h1 {
-        font-size: 36px;
+        font-size: 42px;
     }
 
     main h2 {
-        font-size: 28px;
+        font-size: 32px;
     }
 
     main h3 {
-        font-size: 24px;
+        font-size: 27px;
+    }
+
+    .centered-banner {
+        min-height: 180px;
+    }
+
+    .product-grid {
+        gap: 24px;
     }
 
     .product-card {
-        padding: 20px;
+        padding: 25px;
 
-        border-left-width: 5px;
+        border-left-width: 6px;
     }
 
-    .product-card img {
-        width: 100%;
-
-        max-width: 300px;
+    .product-card h3 {
+        font-size: 28px;
     }
 
     fieldset {
-        padding: 22px 18px;
-    }
-
-    table {
-        font-size: 14px;
+        padding: 30px;
     }
 
     th,
     td {
-        padding: 11px;
+        padding: 14px 16px;
     }
 
-    button {
-        width: 100%;
+    footer {
+        padding: 35px 20px;
     }
 }
 
 
 /* =========================================================
-   7. SMALL PHONES
+   7. LARGE SCREENS
    ========================================================= */
 
-@media (max-width: 420px) {
+/* Additional spacing for larger screens */
 
-    header h1,
-    header h2 {
-        font-size: 26px;
-    }
+@media (min-width: 1000px) {
 
-    header nav ul {
-        gap: 10px;
-    }
-
-    header nav a {
-        font-size: 13px;
+    main {
+        padding-left: 30px;
+        padding-right: 30px;
     }
 
     aside {
-        padding: 20px 16px;
-    }
-
-    main {
-        padding: 35px 15px;
-    }
-
-    .product-card {
-        padding: 18px;
-    }
-
-    fieldset {
-        padding: 20px 15px;
+        margin-left: 16px;
     }
 }
