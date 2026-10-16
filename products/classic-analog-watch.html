@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,30 +14,19 @@
 <body>
 
     <header>
-
-        <h1>Hanelyn Timepieces</h1>
+        <h1 id="shopName">Hanelyn Timepieces</h1>
 
         <nav>
             <ul>
-                <li>
-                    <a href="../index.html">Home</a>
-                </li>
-
-                <li>
-                    <a href="../about.html">About</a>
-                </li>
-
-                <li>
-                    <a href="../contact.html">Contact</a>
-                </li>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../about.html">About</a></li>
+                <li><a href="../contact.html">Contact</a></li>
             </ul>
         </nav>
-
     </header>
 
 
     <aside>
-
         <h2>Shop Categories</h2>
 
         <ul>
@@ -58,14 +48,12 @@
             Monday - Saturday<br>
             9:00 AM - 6:00 PM
         </p>
-
     </aside>
 
 
     <main>
 
         <section>
-
             <h1>Classic Analog Watch</h1>
 
             <img
@@ -95,16 +83,13 @@
                 want a reliable and stylish timepiece that combines
                 practicality with a clean and fashionable appearance.
             </p>
-
         </section>
 
 
         <section>
-
             <h2>Product Specifications</h2>
 
             <table>
-
                 <tr>
                     <th>Specification</th>
                     <th>Details</th>
@@ -149,14 +134,11 @@
                     <td>Price</td>
                     <td>₱1,000</td>
                 </tr>
-
             </table>
-
         </section>
 
 
         <section>
-
             <h2>Order Enquiry</h2>
 
             <p>
@@ -167,14 +149,10 @@
             <form id="orderEnquiryForm">
 
                 <fieldset>
-
                     <legend>Order Details</legend>
 
                     <p>
-
-                        <label for="quantity">
-                            Quantity
-                        </label>
+                        <label for="quantity">Quantity</label>
 
                         <input
                             type="number"
@@ -185,18 +163,13 @@
                             value="1"
                             required
                         >
-
                     </p>
 
 
                     <fieldset>
-
-                        <legend>
-                            Delivery Method
-                        </legend>
+                        <legend>Delivery Method</legend>
 
                         <p>
-
                             <input
                                 type="radio"
                                 id="standardDelivery"
@@ -208,12 +181,9 @@
                             <label for="standardDelivery">
                                 Standard Delivery
                             </label>
-
                         </p>
 
-
                         <p>
-
                             <input
                                 type="radio"
                                 id="expressDelivery"
@@ -224,12 +194,9 @@
                             <label for="expressDelivery">
                                 Express Delivery
                             </label>
-
                         </p>
 
-
                         <p>
-
                             <input
                                 type="radio"
                                 id="storePickup"
@@ -240,20 +207,14 @@
                             <label for="storePickup">
                                 Store Pickup
                             </label>
-
                         </p>
-
                     </fieldset>
 
 
                     <fieldset>
-
-                        <legend>
-                            Optional Extras
-                        </legend>
+                        <legend>Optional Extras</legend>
 
                         <p>
-
                             <input
                                 type="checkbox"
                                 id="giftWrapping"
@@ -264,12 +225,9 @@
                             <label for="giftWrapping">
                                 Gift Wrapping
                             </label>
-
                         </p>
 
-
                         <p>
-
                             <input
                                 type="checkbox"
                                 id="expressHandling"
@@ -280,12 +238,9 @@
                             <label for="expressHandling">
                                 Express Handling
                             </label>
-
                         </p>
 
-
                         <p>
-
                             <input
                                 type="checkbox"
                                 id="watchBox"
@@ -296,17 +251,12 @@
                             <label for="watchBox">
                                 Premium Watch Box
                             </label>
-
                         </p>
-
                     </fieldset>
 
 
                     <p>
-
-                        <label for="contactEmail">
-                            Contact Email
-                        </label>
+                        <label for="contactEmail">Contact Email</label>
 
                         <input
                             type="email"
@@ -314,16 +264,12 @@
                             name="contactEmail"
                             required
                         >
-
                     </p>
 
-
                     <p>
-
                         <button type="submit">
                             Send Order Enquiry
                         </button>
-
                     </p>
 
                 </fieldset>
@@ -332,7 +278,6 @@
 
 
             <section id="orderSuccessMessage" hidden>
-
                 <h2>Order Enquiry Sent!</h2>
 
                 <p>
@@ -344,7 +289,6 @@
                     We will review your enquiry and contact you through
                     the email address you provided.
                 </p>
-
             </section>
 
         </section>
@@ -353,35 +297,13 @@
 
 
     <footer>
-
-        <p>
-            &copy; 2026 Hanelyn Timepieces. Created by Hanelyn Gontiñas.
+        <p id="copyright">
+            © 2026 Hanelyn Timepieces. Created by Hanelyn Gontiñas.
         </p>
-
     </footer>
 
 
-    <script>
-
-        const orderEnquiryForm =
-            document.getElementById("orderEnquiryForm");
-
-        const orderSuccessMessage =
-            document.getElementById("orderSuccessMessage");
-
-
-        orderEnquiryForm.addEventListener("submit", function(event) {
-
-            event.preventDefault();
-
-            orderEnquiryForm.hidden = true;
-
-            orderSuccessMessage.hidden = false;
-
-        });
-
-    </script>
-
+    <script src="../script.js"></script>
 </body>
 
 </html>
