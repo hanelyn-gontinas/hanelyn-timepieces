@@ -5,9 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Hanelyn Timepieces</title>
-
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -25,10 +23,8 @@
         </nav>
     </header>
 
-
     <aside>
         <h2>Shop Categories</h2>
-
         <ul>
             <li>Classic Analog Watches</li>
             <li>Digital Watches</li>
@@ -36,109 +32,81 @@
         </ul>
 
         <h2>Why Shop With Us?</h2>
-
         <p>
             Hanelyn Timepieces offers stylish and practical watches
             for everyday use, special occasions, and different lifestyles.
         </p>
 
         <h2>Shop Hours</h2>
-
         <p>
             Monday - Saturday<br>
             9:00 AM - 6:00 PM
         </p>
     </aside>
 
-
     <main>
 
         <section class="centered-banner">
             <h2>Our Products</h2>
-
-            <p>
-                Timeless style and elegance for every occasion.
-            </p>
+            <p>Timeless style and elegance for every occasion.</p>
         </section>
 
-
         <!-- Product Grid -->
-
         <section class="product-grid">
 
             <article class="product-card" data-price="1000">
-
                 <h3>Classic Analog Watch</h3>
-
                 <p>Price: ₱1,000</p>
-
                 <p>
                     A classic analog watch with a stylish and timeless design.
                     It is perfect for everyday wear and can easily match both
                     casual and formal outfits.
                 </p>
-
                 <img
                     src="analog.jpg"
                     alt="Classic analog watches with leather and metal straps"
                     width="300"
                 >
-
                 <p>
                     <a href="products/classic-analog-watch.html">
                         View details
                     </a>
                 </p>
-
             </article>
 
-
             <article class="product-card" data-price="800">
-
                 <h3>Classic Digital Watch</h3>
-
                 <p>Price: ₱800</p>
-
                 <p>
                     A practical digital watch with a simple and easy-to-read
                     display. It is a great choice for everyday use and for
                     anyone who prefers a sporty and functional style.
                 </p>
-
                 <img
                     src="digital.jpg"
                     alt="Classic digital watches with different colored straps"
                     width="300"
                 >
-
             </article>
 
-
             <article class="product-card" data-price="1500">
-
                 <h3>Modern Smartwatch</h3>
-
                 <p>Price: ₱1,500</p>
-
                 <p>
                     A modern smartwatch featuring a sleek digital display and
                     a comfortable strap. It is designed for customers seeking
                     a stylish watch with practical smart features.
                 </p>
-
                 <img
                     src="smart.jpg"
                     alt="Modern smartwatches with colorful digital displays"
                     width="300"
                 >
-
             </article>
 
         </section>
 
-
-        <!-- JavaScript Product Calculation -->
-
+        <!-- Existing Product Calculation -->
         <section>
             <h2>Our Shop Summary</h2>
 
@@ -152,15 +120,51 @@
             </p>
         </section>
 
-    </main>
+        <!-- Module 8.4: Shop Decisions -->
+        <section>
+            <h2>Shop Decisions</h2>
 
+            <h3>1. Classic Analog Watch Stock Status</h3>
+            <p>
+                Available stock:
+                <span id="stockCount">0</span>
+            </p>
+            <p>
+                Stock status:
+                <strong id="stockStatus">Checking stock...</strong>
+            </p>
+
+            <h3>2. Free Delivery Check</h3>
+            <p>
+                Order total:
+                <span id="orderTotal">₱0</span>
+            </p>
+            <p>
+                Member:
+                <span id="memberStatus">Checking membership...</span>
+            </p>
+            <p>
+                Delivery fee:
+                <span id="deliveryFee">₱0</span>
+            </p>
+            <p>
+                Final total:
+                <strong id="finalTotal">₱0</strong>
+            </p>
+
+            <h3>3. Shop Status</h3>
+            <p>
+                <strong id="shopStatus">Checking shop status...</strong>
+            </p>
+        </section>
+
+    </main>
 
     <footer>
         <p id="copyright">
             © 2026 Hanelyn Timepieces. Created by Hanelyn Gontiñas.
         </p>
     </footer>
-
 
     <script src="script.js"></script>
 </body>
